@@ -283,8 +283,8 @@ conda activate bioinfo
 
 ## Suporte
 
-- 📧 E-mail do professor: *a definir*
-- 💬 Canal da turma: *a definir*
+- 📧 E-mail do professor: yantorres@ufc.br
+- 💬 Canal da turma: Github Discussions
 - 📖 Documentação do Codespaces: [docs.github.com/codespaces](https://docs.github.com/pt/codespaces)
 - 🔬 Repositório da disciplina: `github.com/yanttp/Bioinfo_PPGSis_2026.1`
 
