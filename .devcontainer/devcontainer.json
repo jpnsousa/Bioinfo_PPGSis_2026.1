@@ -1,0 +1,53 @@
+{
+  "name": "Bioinformática PPGSIS 2026",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh 2>&1 | tee .devcontainer/setup.log",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "REditorSupport.r",
+        "rdebugger.r-debugger",
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "github.vscode-pull-request-github",
+        "shd101wyy.markdown-preview-enhanced",
+        "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "mechatroner.rainbow-csv",
+        "hediet.vscode-drawio"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.fontSize": 14,
+        "editor.fontSize": 14,
+        "r.rterm.linux": "/home/vscode/miniforge3/envs/bioinfo/bin/R",
+        "r.plot.useHttpgd": true,
+        "r.lsp.enabled": true
+      }
+    }
+  },
+
+  "forwardPorts": [8787],
+  "portsAttributes": {
+    "8787": {
+      "label": "RStudio Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "remoteUser": "vscode",
+
+  "mounts": [],
+
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb",
+    "storage": "32gb"
+  }
+}
