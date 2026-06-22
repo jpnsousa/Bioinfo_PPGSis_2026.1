@@ -1,0 +1,2 @@
+sars-cov_montado	29078	127	29078	+	NC_045512.2	29903	17	28968	28936	28951	60	NM:i:15	ms:i:28861	AS:i:28861	nn:i:0	tp:A:P	cm:i:2875	s1:i:28704	s2:i:0	de:f:0.0005	rl:i:0	cg:Z:28951M	cs:Z::223*ct*ga:629*ga:1036*ct:130*ct:996*ct:7716*gt:281*ca:3371*ct:2850*gt:6143*ag:673*gt:710*at:588*at:3443*ct:147
+sars-cov_montado	29078	0	127	+	NC_045512.2	29903	28841	28968	127	127	60	NM:i:0	ms:i:127	AS:i:127	nn:i:0	tp:A:P	cm:i:8	s1:i:116	s2:i:0	de:f:0	rl:i:0	cg:Z:127M	cs:Z::127

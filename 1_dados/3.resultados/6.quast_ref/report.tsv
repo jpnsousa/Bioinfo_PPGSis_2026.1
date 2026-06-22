@@ -1,0 +1,55 @@
+Assembly	sars_rc_genome
+# contigs (>= 0 bp)	1
+# contigs (>= 1000 bp)	1
+# contigs (>= 5000 bp)	1
+# contigs (>= 10000 bp)	1
+# contigs (>= 25000 bp)	1
+# contigs (>= 50000 bp)	0
+Total length (>= 0 bp)	29078
+Total length (>= 1000 bp)	29078
+Total length (>= 5000 bp)	29078
+Total length (>= 10000 bp)	29078
+Total length (>= 25000 bp)	29078
+Total length (>= 50000 bp)	0
+# contigs	1
+Largest contig	29078
+Total length	29078
+Reference length	29903
+GC (%)	37.89
+Reference GC (%)	37.97
+N50	29078
+NG50	29078
+N90	29078
+NG90	29078
+auN	29078.0
+auNG	28275.8
+L50	1
+LG50	1
+L90	1
+LG90	1
+# misassemblies	0
+# misassembled contigs	0
+Misassembled contigs length	0
+# local misassemblies	0
+# scaffold gap ext. mis.	0
+# scaffold gap loc. mis.	0
+# unaligned mis. contigs	0
+# unaligned contigs	0 + 0 part
+Unaligned length	0
+Genome fraction (%)	96.816
+Duplication ratio	1.000
+# N's per 100 kbp	0.00
+# mismatches per 100 kbp	51.81
+# indels per 100 kbp	0.00
+Largest alignment	28951
+Total aligned length	28951
+NA50	28951
+NGA50	28951
+NA90	28951
+NGA90	28951
+auNA	28824.6
+auNGA	28029.3
+LA50	1
+LGA50	1
+LA90	1
+LGA90	1

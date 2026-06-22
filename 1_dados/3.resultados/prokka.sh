@@ -8,10 +8,10 @@
 # --force            → sobrescrever se rodar mais de uma vez
 # --cpus 2           → número de núcleos disponíveis no Codespace
 prokka \
-    2.seqkit/main_limpo_contig.fasta \
+    3.seqkit/sars_rc_genome.fasta \
     --kingdom Viruses \
     --proteins 1.genome_ref/ref_NC_045512.2_proteinas.faa \
     --prefix sars_anotado \
-    --outdir 3.prokka/ \
+    --outdir 4.prokka/ \
     --force \
     --cpus 2

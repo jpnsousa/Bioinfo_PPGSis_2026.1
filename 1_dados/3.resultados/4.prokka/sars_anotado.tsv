@@ -1,0 +1,10 @@
+locus_tag	ftype	length_bp	gene	EC_number	COG	product
+PGMABDEF_00001	CDS	13218				[gene=ORF1ab] [locus_tag=GU280_gp01] [db_xref=GeneID:43740578] [protein=ORF1a polyprotein][protein_id=YP_009725295.1] [location=266..13483] [gbkey=CDS]
+PGMABDEF_00002	CDS	7788				[gene=ORF1ab] [locus_tag=GU280_gp01] [db_xref=GeneID:43740578] [protein=ORF1ab polyprotein][exception=ribosomal slippage] [protein_id=YP_009724389.1][location=join(266..13468,13468..21555)] [gbkey=CDS]
+PGMABDEF_00003	CDS	3822				[gene=S] [locus_tag=GU280_gp02] [db_xref=GeneID:43740568] [protein=surface glycoprotein][protein_id=YP_009724390.1] [location=21563..25384] [gbkey=CDS]
+PGMABDEF_00004	CDS	816				[gene=ORF3a] [locus_tag=GU280_gp03] [db_xref=GeneID:43740569] [protein=ORF3a protein][protein_id=YP_009724391.1] [location=25393..26220] [gbkey=CDS]
+PGMABDEF_00005	CDS	669				[gene=M] [locus_tag=GU280_gp05] [db_xref=GeneID:43740571] [protein=membrane glycoprotein][protein_id=YP_009724393.1] [location=26523..27191] [gbkey=CDS]
+PGMABDEF_00006	CDS	366				[gene=ORF7a] [locus_tag=GU280_gp07] [db_xref=GeneID:43740573] [protein=ORF7a protein][protein_id=YP_009724395.1] [location=27394..27759] [gbkey=CDS]
+PGMABDEF_00007	CDS	132				[gene=ORF7b] [locus_tag=GU280_gp08] [db_xref=GeneID:43740574] [protein=ORF7b] [protein_id=YP_009725318.1][location=27756..27887] [gbkey=CDS]
+PGMABDEF_00008	CDS	366				[gene=ORF8] [locus_tag=GU280_gp09] [db_xref=GeneID:43740577] [protein=ORF8 protein][protein_id=YP_009724396.1] [location=27894..28259] [gbkey=CDS]
+PGMABDEF_00009	CDS	294	9b			ORF9b protein

@@ -1,0 +1,47 @@
+>Feature sars-cov_montado
+376	13593	CDS
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:ref_NC_045512.2_proteinas.faa:lcl|NC_045512.2_prot_YP_009725295.1_2
+			locus_tag	PGMABDEF_00001
+			product	[gene=ORF1ab] [locus_tag=GU280_gp01] [db_xref=GeneID:43740578] [protein=ORF1a polyprotein][protein_id=YP_009725295.1] [location=266..13483] [gbkey=CDS]
+13878	21665	CDS
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:ref_NC_045512.2_proteinas.faa:lcl|NC_045512.2_prot_YP_009724389.1_1
+			locus_tag	PGMABDEF_00002
+			product	[gene=ORF1ab] [locus_tag=GU280_gp01] [db_xref=GeneID:43740578] [protein=ORF1ab polyprotein][exception=ribosomal slippage] [protein_id=YP_009724389.1][location=join(266..13468,13468..21555)] [gbkey=CDS]
+21673	25494	CDS
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:ref_NC_045512.2_proteinas.faa:lcl|NC_045512.2_prot_YP_009724390.1_3
+			locus_tag	PGMABDEF_00003
+			product	[gene=S] [locus_tag=GU280_gp02] [db_xref=GeneID:43740568] [protein=surface glycoprotein][protein_id=YP_009724390.1] [location=21563..25384] [gbkey=CDS]
+25515	26330	CDS
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:ref_NC_045512.2_proteinas.faa:lcl|NC_045512.2_prot_YP_009724391.1_4
+			locus_tag	PGMABDEF_00004
+			product	[gene=ORF3a] [locus_tag=GU280_gp03] [db_xref=GeneID:43740569] [protein=ORF3a protein][protein_id=YP_009724391.1] [location=25393..26220] [gbkey=CDS]
+26633	27301	CDS
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:ref_NC_045512.2_proteinas.faa:lcl|NC_045512.2_prot_YP_009724393.1_6
+			locus_tag	PGMABDEF_00005
+			product	[gene=M] [locus_tag=GU280_gp05] [db_xref=GeneID:43740571] [protein=membrane glycoprotein][protein_id=YP_009724393.1] [location=26523..27191] [gbkey=CDS]
+27504	27869	CDS
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:ref_NC_045512.2_proteinas.faa:lcl|NC_045512.2_prot_YP_009724395.1_8
+			locus_tag	PGMABDEF_00006
+			product	[gene=ORF7a] [locus_tag=GU280_gp07] [db_xref=GeneID:43740573] [protein=ORF7a protein][protein_id=YP_009724395.1] [location=27394..27759] [gbkey=CDS]
+27866	27997	CDS
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:ref_NC_045512.2_proteinas.faa:lcl|NC_045512.2_prot_YP_009725318.1_9
+			locus_tag	PGMABDEF_00007
+			product	[gene=ORF7b] [locus_tag=GU280_gp08] [db_xref=GeneID:43740574] [protein=ORF7b] [protein_id=YP_009725318.1][location=27756..27887] [gbkey=CDS]
+28004	28369	CDS
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:ref_NC_045512.2_proteinas.faa:lcl|NC_045512.2_prot_YP_009724396.1_10
+			locus_tag	PGMABDEF_00008
+			product	[gene=ORF8] [locus_tag=GU280_gp09] [db_xref=GeneID:43740577] [protein=ORF8 protein][protein_id=YP_009724396.1] [location=27894..28259] [gbkey=CDS]
+28394	28687	CDS
+			gene	9b
+			inference	ab initio prediction:Prodigal:v2.6
+			inference	similar to AA sequence:UniProtKB:P0DTD2
+			locus_tag	PGMABDEF_00009
+			product	ORF9b protein

@@ -1,0 +1,3 @@
+S1	E1	S2	E2	Reference	Contig	IDY	Ambiguous	Best_group
+18	28968	128	29078	NC_045512.2	sars-cov_montado	99.95		True
+CONTIG	sars-cov_montado	29078	correct

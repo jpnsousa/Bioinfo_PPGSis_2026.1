@@ -1,0 +1,118 @@
+[13:25:49] This is prokka 1.15.6
+[13:25:49] Written by Torsten Seemann <torsten.seemann@gmail.com>
+[13:25:49] Homepage is https://github.com/tseemann/prokka
+[13:25:49] Local time is Mon Jun 22 13:25:49 2026
+[13:25:49] You are vscode
+[13:25:49] Operating system is linux
+[13:25:49] You have BioPerl 1.7.8
+[13:25:49] System has 2 cores.
+[13:25:49] Will use maximum of 2 cores.
+[13:25:49] Annotating as >>> Viruses <<<
+[13:25:49] Generating locus_tag from '3.seqkit/sars_rc_genome.fasta' contents.
+[13:25:49] Setting --locustag PGMABDEF from MD5 906abdef98080b81dcd52f391bbb63ed
+[13:25:49] Re-using existing --outdir 4.prokka/
+[13:25:49] Using filename prefix: sars_anotado.XXX
+[13:25:49] Setting HMMER_NCPU=1
+[13:25:49] Writing log to: 4.prokka//sars_anotado.log
+[13:25:49] Command: /home/vscode/miniforge3/envs/bioinfo/bin/prokka 3.seqkit/sars_rc_genome.fasta --kingdom Viruses --proteins 1.genome_ref/ref_NC_045512.2_proteinas.faa --prefix sars_anotado --outdir 4.prokka/ --force --cpus 2
+[13:25:49] Looking for 'aragorn' - found /home/vscode/miniforge3/envs/bioinfo/bin/aragorn
+[13:25:49] Determined aragorn version is v1.2 from 'ARAGORN v1.2.41 Dean Laslett'
+[13:25:49] Looking for 'barrnap' - found /home/vscode/miniforge3/envs/bioinfo/bin/barrnap
+[13:25:49] Determined barrnap version is v1.10 from 'barrnap 1.10.5'
+[13:25:49] Looking for 'blastp' - found /home/vscode/miniforge3/envs/bioinfo/bin/blastp
+[13:25:57] Determined blastp version is v2.16 from 'blastp: 2.16.0+'
+[13:25:57] Looking for 'cmpress' - found /home/vscode/miniforge3/envs/bioinfo/bin/cmpress
+[13:25:57] Determined cmpress version is v1.1 from '# INFERNAL 1.1.5 (Sep 2023)'
+[13:25:57] Looking for 'cmscan' - found /home/vscode/miniforge3/envs/bioinfo/bin/cmscan
+[13:25:57] Determined cmscan version is v1.1 from '# INFERNAL 1.1.5 (Sep 2023)'
+[13:25:57] Looking for 'egrep' - found /usr/bin/egrep
+[13:25:57] Looking for 'find' - found /usr/bin/find
+[13:25:57] Looking for 'grep' - found /usr/bin/grep
+[13:25:57] Looking for 'hmmpress' - found /home/vscode/miniforge3/envs/bioinfo/bin/hmmpress
+[13:25:58] Determined hmmpress version is v3.4 from '# HMMER 3.4 (Aug 2023); http://hmmer.org/'
+[13:25:58] Looking for 'hmmscan' - found /home/vscode/miniforge3/envs/bioinfo/bin/hmmscan
+[13:25:58] Determined hmmscan version is v3.4 from '# HMMER 3.4 (Aug 2023); http://hmmer.org/'
+[13:25:58] Looking for 'java' - found /home/vscode/miniforge3/envs/bioinfo/bin/java
+[13:25:58] Looking for 'makeblastdb' - found /home/vscode/miniforge3/envs/bioinfo/bin/makeblastdb
+[13:25:58] Determined makeblastdb version is v2.16 from 'makeblastdb: 2.16.0+'
+[13:25:58] Looking for 'minced' - found /home/vscode/miniforge3/envs/bioinfo/bin/minced
+[13:25:58] Determined minced version is v4.2 from 'minced 0.4.2'
+[13:25:58] Looking for 'parallel' - found /home/vscode/miniforge3/envs/bioinfo/bin/parallel
+[13:25:59] Determined parallel version is 20260422 from 'GNU parallel 20260422'
+[13:25:59] Looking for 'prodigal' - found /home/vscode/miniforge3/envs/bioinfo/bin/prodigal
+[13:25:59] Determined prodigal version is v2.6 from 'Prodigal V2.6.3: February, 2016'
+[13:25:59] Looking for 'prokka-genbank_to_fasta_db' - found /home/vscode/miniforge3/envs/bioinfo/bin/prokka-genbank_to_fasta_db
+[13:25:59] Looking for 'sed' - found /home/vscode/miniforge3/envs/bioinfo/bin/sed
+[13:25:59] Looking for 'tbl2asn' - found /home/vscode/miniforge3/envs/bioinfo/bin/tbl2asn
+[13:25:59] Determined tbl2asn version is v25.7 from 'tbl2asn 25.7   arguments:'
+[13:25:59] Using genetic code table 1.
+[13:25:59] Loading and checking input file: 3.seqkit/sars_rc_genome.fasta
+[13:25:59] Wrote 1 contigs totalling 29078 bp.
+[13:25:59] Predicting tRNAs and tmRNAs
+[13:25:59] Running: aragorn -l -gc1  -w 4\.prokka\/\/sars_anotado\.fna
+[13:26:00] Found 0 tRNAs
+[13:26:00] Disabling rRNA search: --kingdom=Viruses or --norrna=0
+[13:26:00] Skipping ncRNA search, enable with --rfam if desired.
+[13:26:00] Total of 0 tRNA + rRNA features
+[13:26:00] Searching for CRISPR repeats
+[13:26:00] Found 0 CRISPRs
+[13:26:00] Predicting coding sequences
+[13:26:00] Contigs total 29078 bp, so using single mode
+[13:26:00] Running: prodigal -i 4\.prokka\/\/sars_anotado\.fna -c -m -g 1 -p single -f sco -q
+[13:26:00] Found 9 CDS
+[13:26:00] Connecting features back to sequences
+[13:26:00] Not using genus-specific database. Try --usegenus to enable it.
+[13:26:00] Preparing user-supplied primary BLAST annotation source: 1.genome_ref/ref_NC_045512.2_proteinas.faa
+[13:26:00] Guessed source was in fasta format.
+[13:26:00] Running: makeblastdb -dbtype prot -in 1\.genome_ref\/ref_NC_045512\.2_proteinas\.faa -out 4\.prokka\/\/proteins -logfile /dev/null
+[13:26:00] Using /inference source as 'ref_NC_045512.2_proteinas.faa'
+[13:26:00] Annotating CDS, please be patient.
+[13:26:00] Will use 2 CPUs for similarity searching.
+[13:26:00] There are still 9 unannotated CDS left (started with 9)
+[13:26:00] Will use blast to search against 4.prokka//proteins with 2 CPUs
+[13:26:00] Running: cat 4\.prokka\/\/sars_anotado\.proteins\.tmp\.28274\.faa | parallel --gnu --plain -j 2 --block 2296 --recstart '>' --pipe blastp -query - -db 4.prokka//proteins -evalue 1e-09 -qcov_hsp_perc 80 -num_threads 1 -num_descriptions 1 -num_alignments 1 -seg no > 4\.prokka\/\/sars_anotado\.proteins\.tmp\.28274\.blast 2> /dev/null
+[13:26:01] Deleting unwanted file: 4.prokka//sars_anotado.proteins.tmp.28274.faa
+[13:26:01] Deleting unwanted file: 4.prokka//sars_anotado.proteins.tmp.28274.blast
+[13:26:01] There are still 1 unannotated CDS left (started with 9)
+[13:26:01] Will use blast to search against /home/vscode/miniforge3/envs/bioinfo/db/kingdom/Viruses/sprot with 2 CPUs
+[13:26:01] Running: cat 4\.prokka\/\/sars_anotado\.sprot\.tmp\.28274\.faa | parallel --gnu --plain -j 2 --block 25 --recstart '>' --pipe blastp -query - -db /home/vscode/miniforge3/envs/bioinfo/db/kingdom/Viruses/sprot -evalue 1e-09 -qcov_hsp_perc 80 -num_threads 1 -num_descriptions 1 -num_alignments 1 -seg no > 4\.prokka\/\/sars_anotado\.sprot\.tmp\.28274\.blast 2> /dev/null
+[13:26:01] Deleting unwanted file: 4.prokka//sars_anotado.sprot.tmp.28274.faa
+[13:26:01] Deleting unwanted file: 4.prokka//sars_anotado.sprot.tmp.28274.blast
+[13:26:01] Deleting unwanted file: 4.prokka//proteins.psq
+[13:26:01] Deleting unwanted file: 4.prokka//proteins.phr
+[13:26:01] Deleting unwanted file: 4.prokka//proteins.pin
+[13:26:01] Found 1 unique /gene codes.
+[13:26:01] Fixed 0 colliding /gene names.
+[13:26:01] Adding /locus_tag identifiers
+[13:26:01] Assigned 9 locus_tags to CDS and RNA features.
+[13:26:01] Writing outputs to 4.prokka//
+[13:26:01] Generating annotation statistics file
+[13:26:01] Generating Genbank and Sequin files
+[13:26:01] Running: tbl2asn -V b -a r10k -l paired-ends -M n -N 1 -y 'Annotated using prokka 1.15.6 from https://github.com/tseemann/prokka' -Z 4\.prokka\/\/sars_anotado\.err -i 4\.prokka\/\/sars_anotado\.fsa 2> /dev/null
+[13:26:03] Deleting unwanted file: 4.prokka//errorsummary.val
+[13:26:03] Deleting unwanted file: 4.prokka//sars_anotado.dr
+[13:26:03] Deleting unwanted file: 4.prokka//sars_anotado.fixedproducts
+[13:26:03] Deleting unwanted file: 4.prokka//sars_anotado.ecn
+[13:26:03] Deleting unwanted file: 4.prokka//sars_anotado.val
+[13:26:03] Repairing broken .GBK output that tbl2asn produces...
+[13:26:03] Running: sed 's/COORDINATES: profile/COORDINATES:profile/' < 4\.prokka\/\/sars_anotado\.gbf > 4\.prokka\/\/sars_anotado\.gbk
+[13:26:03] Deleting unwanted file: 4.prokka//sars_anotado.gbf
+[13:26:03] Output files:
+[13:26:03] 4.prokka/sars_anotado.ffn
+[13:26:03] 4.prokka/sars_anotado.txt
+[13:26:03] 4.prokka/sars_anotado.gbk
+[13:26:03] 4.prokka/sars_anotado.tbl
+[13:26:03] 4.prokka/sars_anotado.tsv
+[13:26:03] 4.prokka/sars_anotado.err
+[13:26:03] 4.prokka/sars_anotado.sqn
+[13:26:03] 4.prokka/sars_anotado.fna
+[13:26:03] 4.prokka/sars_anotado.gff
+[13:26:03] 4.prokka/sars_anotado.log
+[13:26:03] 4.prokka/sars_anotado.faa
+[13:26:03] 4.prokka/sars_anotado.fsa
+[13:26:03] Annotation finished successfully.
+[13:26:03] Walltime used: 0.23 minutes
+[13:26:03] If you use this result please cite the Prokka paper:
+[13:26:03] Seemann T (2014) Prokka: rapid prokaryotic genome annotation. Bioinformatics. 30(14):2068-9.
+[13:26:03] Type 'prokka --citation' for more details.
+[13:26:03] Thank you, come again.
