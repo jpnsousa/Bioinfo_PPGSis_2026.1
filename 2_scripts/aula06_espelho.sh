@@ -223,20 +223,20 @@ qiime metadata tabulate \
 
 # Resumo da tabela de features (ASVs)
 qiime feature-table summarize \
-  --i-table    table.qza \
+  --i-table    4_qza/table.qza \
   --m-sample-metadata-file sample-metadata.tsv \
-  --o-visualization table.qzv
+  --o-visualization 5_qzv/table.qzv
 # --i-table                : tabela ASV × amostra
 # --m-sample-metadata-file : metadados para colorir amostras por grupo
 # --o-visualization        : histograma de reads por amostra + detalhes por feature
 
 # Tabela das sequências das ASVs
 qiime feature-table tabulate-seqs \
-  --i-data    rep-seqs.qza \
-  --o-visualization rep-seqs.qzv
+  --i-data    4_qza/rep-seqs.qza \
+  --o-visualization 5_qzv/rep-seqs.qzv
 # --i-data          : artefato com sequências representativas
 # --o-visualization : tabela clicável — cada ASV abre BLAST no NCBI
-#
+#ta
 # >>> Abrir table.qzv para definir profundidade de rarefação no Bloco 8
 
 
@@ -248,10 +248,10 @@ qiime feature-table tabulate-seqs \
 # Já disponível em ~/data/ (pré-baixado antes da aula para economizar tempo)
 
 qiime feature-classifier classify-sklearn \
-  --i-classifier  ref_SILVA/silva-138-99-nb-classifier.qza \
-  --i-reads       rep-seqs.qza \
+  --i-classifier  3_ref_SILVA/silva-138-99-nb-classifier.qza \
+  --i-reads       4_qza/rep-seqs.qza \
   --p-n-jobs      1 \
-  --o-classification taxonomy.qza
+  --o-classification 4_qza/taxonomy.qza
 # --i-classifier   : classificador Naive Bayes pré-treinado (SILVA 138, V4)
 # --i-reads        : sequências das ASVs a classificar
 # --p-n-jobs       : número de núcleos paralelos (2 = limite do Codespace)

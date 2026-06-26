@@ -1,4 +1,0 @@
-Rabbit_Slough_5	Rabbit_Slough
-Rabbit_Slough_7	Rabbit_Slough
-Bear_Paw_6	Bear_Paw
-Bear_Paw_8	Bear_Paw

@@ -1,0 +1,16 @@
+Bear_Paw_1	Bear_Paw
+Bear_Paw_2	Bear_Paw
+Bear_Paw_3	Bear_Paw
+Bear_Paw_4	Bear_Paw
+Bear_Paw_5	Bear_Paw
+Bear_Paw_6	Bear_Paw
+Bear_Paw_7	Bear_Paw
+Bear_Paw_8	Bear_Paw
+Rabbit_Slough_1	Rabbit_Slough
+Rabbit_Slough_2	Rabbit_Slough
+Rabbit_Slough_3	Rabbit_Slough
+Rabbit_Slough_4	Rabbit_Slough
+Rabbit_Slough_5	Rabbit_Slough
+Rabbit_Slough_6	Rabbit_Slough
+Rabbit_Slough_7	Rabbit_Slough
+Rabbit_Slough_8	Rabbit_Slough
