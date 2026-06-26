@@ -1,0 +1,71 @@
+# Note: Individual distributions can be extracted using the `stacks-dist-extract` utility.
+#       e.g. `stacks-dist-extract gstacks.log.distribs dist_name`
+
+BEGIN effective_coverages_per_sample
+# For mean_cov_ns, the coverage at each locus is weighted by the number of
+# samples present at that locus (i.e. coverage at shared loci counts more).
+sample	n_loci	n_used_fw_reads	mean_cov	mean_cov_ns
+Bear_Paw_1	3444	15446	4.485	5.763
+Bear_Paw_2	3173	14420	4.545	5.964
+Bear_Paw_3	3968	17512	4.413	5.626
+Bear_Paw_4	3300	14701	4.455	5.978
+Bear_Paw_5	3071	13756	4.479	5.950
+Bear_Paw_6	2592	11383	4.392	6.030
+Bear_Paw_7	3557	15922	4.476	5.943
+Bear_Paw_8	3015	12870	4.269	5.836
+Rabbit_Slough_1	3636	15530	4.271	5.631
+Rabbit_Slough_2	2939	12621	4.294	5.861
+Rabbit_Slough_3	3251	14263	4.387	5.974
+Rabbit_Slough_4	3171	14179	4.471	6.038
+Rabbit_Slough_5	3125	13340	4.269	5.628
+Rabbit_Slough_6	2767	12049	4.355	5.860
+Rabbit_Slough_7	3735	16225	4.344	5.670
+Rabbit_Slough_8	2951	13054	4.424	6.214
+END effective_coverages_per_sample
+
+BEGIN phasing_rates_per_sample
+sample	n_gts	n_multisnp_hets	n_phased	misphasing_rate
+Bear_Paw_1	284	20	16	0.200
+Bear_Paw_2	272	20	16	0.200
+Bear_Paw_3	312	18	15	0.167
+Bear_Paw_4	299	22	17	0.227
+Bear_Paw_5	263	26	20	0.231
+Bear_Paw_6	219	22	17	0.227
+Bear_Paw_7	291	23	20	0.130
+Bear_Paw_8	248	22	17	0.227
+Rabbit_Slough_1	302	27	25	0.074
+Rabbit_Slough_2	219	17	12	0.294
+Rabbit_Slough_3	268	16	14	0.125
+Rabbit_Slough_4	279	17	15	0.118
+Rabbit_Slough_5	235	22	17	0.227
+Rabbit_Slough_6	231	26	20	0.231
+Rabbit_Slough_7	315	20	15	0.250
+Rabbit_Slough_8	259	22	15	0.318
+END phasing_rates_per_sample
+
+BEGIN clockings
+Num. threads: 2
+Parallel time: 4.2
+Average thread time spent:
+     0.1  reading (2.7%)
+     3.0  processing (71.2%)
+             0.5 pre-alignments block (12.4%)
+             0.0  reformatting fw-reads (0.2%)
+             0.2  assembling (3.8%)
+             0.1  initializing alignments (1.8%)
+             0.2  aligning (5.9%)
+             0.0  merging read pairs (0.6%)
+             2.4 post-alignments block (57.5%)
+             0.0  filtering reads (0.0%)
+             0.2  counting nucleotides (4.5%)
+             0.1  genotyping (1.8%)
+             0.0  haplotyping (0.1%)
+             0.0  computing consensus (0.1%)
+             0.0  building_fa (0.3%)
+             2.1  building_vcf (50.1%)
+     0.2  writing_fa (4.2%)
+     0.9  writing_vcf (21.8%)
+     0.0  clocking (1.1%)
+Total time spent writing vcf: 0.9 (22.0%)
+VCFwrite block size: mean=1.3(n=17816); max=35
+END clockings

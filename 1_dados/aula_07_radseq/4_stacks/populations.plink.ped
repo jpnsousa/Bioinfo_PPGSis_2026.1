@@ -1,0 +1,17 @@
+# Stacks v2.68;  PLINK v1.07; June 26, 2026
+Bear_Paw	Bear_Paw_1	0	0	0	0	C	G	C	G	C	T	C	C	A	G	T	T	T	T	A	T	C	C	C	C	G	G	C	T	C	C	A	C	0	0	0	0	0	0	0	0	0	0
+Bear_Paw	Bear_Paw_2	0	0	0	0	C	G	0	0	T	T	C	C	0	0	T	T	C	T	A	A	C	T	A	C	G	G	C	T	0	0	A	C	A	T	C	T	C	C	G	T	0	0
+Bear_Paw	Bear_Paw_3	0	0	0	0	C	G	C	G	0	0	C	T	A	G	T	T	T	T	A	A	C	T	C	C	G	G	C	T	C	T	C	C	A	T	C	T	C	C	0	0	C	C
+Bear_Paw	Bear_Paw_4	0	0	0	0	C	G	G	G	T	T	0	0	G	G	T	T	C	T	0	0	C	T	C	C	G	G	T	T	C	C	A	C	T	T	C	T	C	C	G	T	A	C
+Bear_Paw	Bear_Paw_5	0	0	0	0	G	G	G	G	C	T	C	C	G	G	0	0	C	T	A	T	C	C	C	C	0	0	0	0	C	C	A	C	A	T	T	T	C	C	G	G	A	C
+Bear_Paw	Bear_Paw_6	0	0	0	0	0	0	C	G	C	T	C	C	G	G	A	T	0	0	0	0	C	T	0	0	0	0	C	T	C	C	C	C	A	T	C	T	C	C	G	G	A	C
+Bear_Paw	Bear_Paw_7	0	0	0	0	G	G	C	G	T	T	C	C	G	G	T	T	T	T	A	A	C	C	C	C	G	G	C	T	C	T	C	C	A	T	T	T	C	C	G	G	A	C
+Bear_Paw	Bear_Paw_8	0	0	0	0	0	0	G	G	C	T	0	0	A	G	A	T	0	0	A	A	C	C	A	C	G	G	C	T	C	C	A	C	0	0	T	T	C	C	G	T	C	C
+Rabbit_Slough	Rabbit_Slough_1	0	0	0	0	G	G	C	G	T	T	0	0	G	G	T	T	C	T	A	A	C	C	0	0	A	G	C	T	C	C	C	C	A	A	0	0	A	C	G	G	0	0
+Rabbit_Slough	Rabbit_Slough_2	0	0	0	0	0	0	G	G	T	T	C	C	G	G	T	T	0	0	0	0	C	T	C	C	A	G	C	T	C	C	C	C	A	A	0	0	0	0	G	G	A	C
+Rabbit_Slough	Rabbit_Slough_3	0	0	0	0	G	G	G	G	T	T	C	C	G	G	T	T	T	T	A	A	C	T	C	C	0	0	C	T	C	C	C	C	A	A	C	T	C	C	G	T	C	C
+Rabbit_Slough	Rabbit_Slough_4	0	0	0	0	G	G	G	G	T	T	0	0	G	G	T	T	T	T	0	0	C	T	C	C	A	G	T	T	C	C	C	C	A	A	C	T	A	C	G	T	C	C
+Rabbit_Slough	Rabbit_Slough_5	0	0	0	0	G	G	C	G	T	T	C	T	G	G	T	T	T	T	A	A	C	T	C	C	A	G	C	T	C	C	C	C	A	A	C	T	C	C	0	0	C	C
+Rabbit_Slough	Rabbit_Slough_6	0	0	0	0	G	G	C	G	T	T	C	C	0	0	T	T	C	T	A	A	C	T	C	C	0	0	0	0	0	0	C	C	A	A	C	T	0	0	G	T	A	C
+Rabbit_Slough	Rabbit_Slough_7	0	0	0	0	0	0	G	G	0	0	C	C	G	G	T	T	C	T	A	A	C	C	C	C	G	G	C	T	0	0	C	C	A	A	C	T	C	C	G	T	A	C
+Rabbit_Slough	Rabbit_Slough_8	0	0	0	0	G	G	0	0	T	T	C	C	G	G	T	T	T	T	A	A	C	T	C	C	A	G	T	T	C	C	C	C	A	A	C	T	C	C	G	T	0	0

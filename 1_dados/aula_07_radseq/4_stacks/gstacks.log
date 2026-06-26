@@ -1,0 +1,29 @@
+gstacks v2.68, executed 2026-06-26 14:29:47 (zlib-1.3.2)
+gstacks -P 4_stacks --threads 2 --kmer-length 15 -M popmap_completo.txt
+Locus/sample distributions will be written to '4_stacks/gstacks.log.distribs'.
+
+Configuration for this run:
+  Input mode: denovo
+  Population map: 'popmap_completo.txt'
+  Input files: 16, e.g. '4_stacks/Bear_Paw_1.matches.bam'
+  Output to: '4_stacks/'
+  Model: marukilow (var_alpha: 0.01, gt_alpha: 0.05)
+  Kmer length: 15
+
+Reading BAM headers...
+Processing all loci...
+1%...
+2%...
+5%...
+10%...
+20%...
+50%...
+100%
+Input appears to be single-end (no paired-end reads were seen).
+
+Genotyped 22532 loci:
+  effective per-sample coverage: mean=5.9x, stdev=0.2x, min=5.6x, max=6.2x
+  mean number of sites per locus: 32.0
+  a consistent phasing was found for 271 of out 340 (79.7%) diploid loci needing phasing
+
+gstacks is done.

@@ -1,0 +1,150 @@
+# Note: Individual distributions can be extracted using the `stacks-dist-extract` utility.
+#       e.g. `stacks-dist-extract populations.log.distribs dist_name`
+
+BEGIN batch_progress
+# Batch 1: analyzed 116 loci; filtered 22416 loci; 22532 loci seen.
+    Calculating F statistics...done.
+END batch_progress
+
+BEGIN samples_per_loc_prefilters
+# Distribution of valid samples matched to a catalog locus prior to filtering.
+n_samples	n_loci
+1	9843
+2	5454
+3	3210
+4	1900
+5	1032
+6	490
+7	257
+8	99
+9	48
+10	40
+11	24
+12	21
+13	25
+14	28
+15	18
+16	43
+END samples_per_loc_prefilters
+
+BEGIN missing_samples_per_loc_prefilters
+# Distribution of missing samples for each catalog locus prior to filtering.
+Absent samples at locus	Count
+0	43
+1	18
+2	28
+3	25
+4	21
+5	24
+6	40
+7	48
+8	99
+9	257
+10	490
+11	1032
+12	1900
+13	3210
+14	5454
+15	9843
+END missing_samples_per_loc_prefilters
+
+BEGIN snps_per_loc_prefilters
+# Distribution of the number of SNPs per catalog locus prior to filtering.
+n_snps	n_loci
+0	21582
+1	843
+2	69
+3	24
+4	12
+5	2
+END snps_per_loc_prefilters
+
+BEGIN samples_per_loc_postfilters
+# Distribution of valid samples matched to a catalog locus after filtering.
+n_samples	n_loci
+12	8
+13	19
+14	28
+15	18
+16	43
+END samples_per_loc_postfilters
+
+BEGIN missing_samples_per_loc_postfilters
+# Distribution of missing samples for each catalog locus after filtering.
+Absent samples at locus	Count
+0	43
+1	18
+2	28
+3	19
+4	8
+END missing_samples_per_loc_postfilters
+
+BEGIN snps_per_loc_postfilters
+# Distribution of the number of SNPs per catalog locus (after filtering).
+n_snps	n_loci
+0	97
+1	19
+END snps_per_loc_postfilters
+
+BEGIN loci_per_sample_prefilters
+# Number of loci per individual sample (before filtering).
+sample	n_loci	present_loci	missing_loci	frequency_missing
+Bear_Paw_1	22532	3444	19088	0.8472
+Bear_Paw_2	22532	3173	19359	0.8592
+Bear_Paw_3	22532	3968	18564	0.8239
+Bear_Paw_4	22532	3300	19232	0.8535
+Bear_Paw_5	22532	3071	19461	0.8637
+Bear_Paw_6	22532	2592	19940	0.8850
+Bear_Paw_7	22532	3557	18975	0.8421
+Bear_Paw_8	22532	3015	19517	0.8662
+Rabbit_Slough_1	22532	3636	18896	0.8386
+Rabbit_Slough_2	22532	2939	19593	0.8696
+Rabbit_Slough_3	22532	3251	19281	0.8557
+Rabbit_Slough_4	22532	3171	19361	0.8593
+Rabbit_Slough_5	22532	3125	19407	0.8613
+Rabbit_Slough_6	22532	2767	19765	0.8772
+Rabbit_Slough_7	22532	3735	18797	0.8342
+Rabbit_Slough_8	22532	2951	19581	0.8690
+END loci_per_sample_prefilters
+
+BEGIN loci_per_sample
+# Number of loci per individual sample (after filtering).
+sample	n_loci	present_loci	missing_loci	frequency_missing
+Bear_Paw_1	116	103	13	0.1121
+Bear_Paw_2	116	102	14	0.1207
+Bear_Paw_3	116	109	7	0.0603
+Bear_Paw_4	116	110	6	0.0517
+Bear_Paw_5	116	104	12	0.1034
+Bear_Paw_6	116	103	13	0.1121
+Bear_Paw_7	116	111	5	0.0431
+Bear_Paw_8	116	110	6	0.0517
+Rabbit_Slough_1	116	107	9	0.0776
+Rabbit_Slough_2	116	100	16	0.1379
+Rabbit_Slough_3	116	109	7	0.0603
+Rabbit_Slough_4	116	106	10	0.0862
+Rabbit_Slough_5	116	104	12	0.1034
+Rabbit_Slough_6	116	102	14	0.1207
+Rabbit_Slough_7	116	105	11	0.0948
+Rabbit_Slough_8	116	108	8	0.0690
+END loci_per_sample
+
+BEGIN variant_sites_per_sample
+# Number of variant sites per individual sample (after filtering).
+sample	n_sites	present_sites	missing_sites	frequency_missing
+Bear_Paw_1	19	14	5	0.2632
+Bear_Paw_2	19	15	4	0.2105
+Bear_Paw_3	19	17	2	0.1053
+Bear_Paw_4	19	17	2	0.1053
+Bear_Paw_5	19	16	3	0.1579
+Bear_Paw_6	19	14	5	0.2632
+Bear_Paw_7	19	19	0	0.0000
+Bear_Paw_8	19	15	4	0.2105
+Rabbit_Slough_1	19	15	4	0.2105
+Rabbit_Slough_2	19	14	5	0.2632
+Rabbit_Slough_3	19	18	1	0.0526
+Rabbit_Slough_4	19	17	2	0.1053
+Rabbit_Slough_5	19	18	1	0.0526
+Rabbit_Slough_6	19	14	5	0.2632
+Rabbit_Slough_7	19	16	3	0.1579
+Rabbit_Slough_8	19	17	2	0.1053
+END variant_sites_per_sample

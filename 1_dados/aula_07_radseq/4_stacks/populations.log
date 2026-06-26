@@ -1,0 +1,53 @@
+populations v2.68, executed 2026-06-26 14:38:48 (zlib-1.3.2)
+populations -P 4_stacks --popmap popmap_completo.txt -O 4_stacks/ --threads 2 -r 0.75 -p 2 --min-maf 0.05 --max-obs-het 0.80 --write-single-snp --fstats --vcf --plink --genepop
+Locus/sample distributions will be written to '4_stacks/populations.log.distribs'.
+populations parameters selected:
+  Percent samples limit per population: 0.75
+  Locus Population limit: 2
+  Percent samples overall: 0
+  Minor allele frequency cutoff: 0.05
+  Maximum observed heterozygosity cutoff: 0.8
+  Applying Fst correction: none.
+  Pi/Fis kernel smoothing: off
+  F-stats kernel smoothing: off
+  Bootstrap resampling: off
+
+Parsing population map...
+The population map contained 16 samples, 2 population(s), 1 group(s).
+Working on 16 samples.
+Working on 2 population(s):
+    Bear_Paw: Bear_Paw_1, Bear_Paw_2, Bear_Paw_3, Bear_Paw_4, Bear_Paw_5, Bear_Paw_6, Bear_Paw_7, Bear_Paw_8
+    Rabbit_Slough: Rabbit_Slough_1, Rabbit_Slough_2, Rabbit_Slough_3, Rabbit_Slough_4, Rabbit_Slough_5, Rabbit_Slough_6, Rabbit_Slough_7, Rabbit_Slough_8
+Working on 1 group(s) of populations:
+    defaultgrp: Bear_Paw, Rabbit_Slough
+
+SNPs and calls will be written in VCF format to '4_stacks/populations.snps.vcf'
+Polymorphic sites in PLINK format will be written to '4_stacks/populations.plink.ped'
+Polymorphic sites in GenePop format will be written to '4_stacks/populations.snps.genepop'
+Raw haplotypes will be written to '4_stacks/populations.haplotypes.tsv'
+Population-level summary statistics will be written to '4_stacks/populations.sumstats.tsv'
+Population-level haplotype summary statistics will be written to '4_stacks/populations.hapstats.tsv'
+
+Processing data in batches:
+  * load a batch of catalog loci and apply filters
+  * compute SNP- and haplotype-wise per-population statistics
+  * compute F-statistics
+  * write the above statistics in the output files
+  * export the genotypes/haplotypes in specified format(s)
+More details in '4_stacks/populations.log.distribs'.
+
+Now processing...
+Batch 1 
+
+Removed 22416 loci that did not pass sample/population constraints from 22532 loci.
+Kept 116 loci, composed of 3720 sites; 116 of those sites were filtered, 19 variant sites remained.
+Mean genotyped sites per locus: 31.55bp (stderr 0.08).
+
+Population summary statistics (more detail in populations.sumstats_summary.tsv):
+  Bear_Paw: 6.6842 samples per locus; pi: 0.3498; all/variant/polymorphic sites: 3660/19/17; private alleles: 9
+  Rabbit_Slough: 6.7895 samples per locus; pi: 0.21941; all/variant/polymorphic sites: 3660/19/10; private alleles: 2
+
+Population pair divergence statistics (more in populations.fst_summary.tsv and populations.phistats_summary.tsv):
+  Bear_Paw-Rabbit_Slough: mean Fst: 0.099984; mean Phi_st: 0.098367; mean Fst': 0.042132; mean Dxy: 0.011743
+
+Populations is done.

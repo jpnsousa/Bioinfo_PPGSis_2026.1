@@ -1,0 +1,1469 @@
+denovo_map.pl version _VERSION_ started at 2026-06-26 14:26:02
+/home/vscode/miniforge3/envs/bioinfo/bin/denovo_map.pl   ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_1.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_2.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_3.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_4.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_5.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_6.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_7.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_8.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_1.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_2.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_3.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_4.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_5.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_6.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_7.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+  ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_8.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+
+Depths of Coverage for Processed Samples:
+Bear_Paw_1; loci assembled: 3484; depth: 4.59x; max: 122x; number of reads: 15855 (31.7%)
+Bear_Paw_2; loci assembled: 3214; depth: 4.65x; max: 111x; number of reads: 14835 (29.7%)
+Bear_Paw_3; loci assembled: 4030; depth: 4.48x; max: 99x; number of reads: 17954 (35.9%)
+Bear_Paw_4; loci assembled: 3349; depth: 4.54x; max: 109x; number of reads: 15128 (30.3%)
+Bear_Paw_5; loci assembled: 3118; depth: 4.51x; max: 97x; number of reads: 13957 (27.9%)
+Bear_Paw_6; loci assembled: 2633; depth: 4.47x; max: 110x; number of reads: 11676 (23.4%)
+Bear_Paw_7; loci assembled: 3606; depth: 4.53x; max: 88x; number of reads: 16235 (32.5%)
+Bear_Paw_8; loci assembled: 3056; depth: 4.33x; max: 101x; number of reads: 13163 (26.3%)
+Rabbit_Slough_1; loci assembled: 3673; depth: 4.32x; max: 114x; number of reads: 15800 (31.6%)
+Rabbit_Slough_2; loci assembled: 2974; depth: 4.34x; max: 101x; number of reads: 12828 (25.7%)
+Rabbit_Slough_3; loci assembled: 3293; depth: 4.43x; max: 91x; number of reads: 14491 (29.0%)
+Rabbit_Slough_4; loci assembled: 3215; depth: 4.50x; max: 134x; number of reads: 14349 (28.7%)
+Rabbit_Slough_5; loci assembled: 3163; depth: 4.31x; max: 113x; number of reads: 13541 (27.1%)
+Rabbit_Slough_6; loci assembled: 2803; depth: 4.41x; max: 116x; number of reads: 12274 (24.5%)
+Rabbit_Slough_7; loci assembled: 3780; depth: 4.37x; max: 88x; number of reads: 16408 (32.8%)
+Rabbit_Slough_8; loci assembled: 2983; depth: 4.46x; max: 87x; number of reads: 13250 (26.5%)
+
+Generating catalog...
+  cstacks -n 1 --threads 2 -M popmap_completo.txt -P 4_stacks
+
+Matching samples to the catalog...
+  sstacks -P 4_stacks --threads 2 -M popmap_completo.txt
+
+Sorting reads by RAD locus...
+  tsv2bam -P 4_stacks  --threads 2 -M popmap_completo.txt
+
+Calling variants, genotypes and haplotypes...
+  gstacks -P 4_stacks --threads 2 --kmer-length 15 -M popmap_completo.txt
+
+Calculating population-level summary statistics
+  populations -P 4_stacks --threads 2 -M popmap_completo.txt
+
+denovo_map.pl is done.
+3214 stacks.
+Coverage after gapped assembly: mean=4.62; stdev=4.64; max=108; n_reads=14735(29.5%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 100 out of 31578 secondary reads (0.3%).
+Coverage after merging gapped secondary stacks: mean=4.65; stdev=4.82; max=111; n_reads=14835(29.7%)
+
+Final number of stacks built: 3214
+Final coverage: mean=4.65; stdev=4.82; max=111; n_reads=14835(29.7%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Bear_Paw_2'...done.
+ustacks is done.
+
+Sample 3 of 16 'Bear_Paw_3'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_3.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Bear_Paw_3.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  4218 stacks representing 19616 primary reads (39.2%)
+  24980 secondary stacks representing 30384 secondary reads (60.8%)
+
+Stack coverage: mean=4.65; stdev=12.29; max=409; n_reads=19616(39.2%)
+Removing repetitive stacks: cov > 42 (mean+3*stdev)...
+  Blacklisted 101 stacks.
+Coverage after repeat removal: mean=3.94; stdev=2.23; max=39; n_reads=16240(32.5%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 4117 stacks into 4042; blacklisted 9 stacks.
+Coverage after assembling stacks: mean=3.95; stdev=2.28; max=44; n_reads=15874(31.7%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1958 out of 30384 secondary reads (6.4%), 590 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.44; stdev=3.40; max=94; n_reads=17832(35.7%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 4042 stacks into 4030 stacks.
+Coverage after gapped assembly: mean=4.45; stdev=3.60; max=94; n_reads=17832(35.7%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 122 out of 28426 secondary reads (0.4%).
+Coverage after merging gapped secondary stacks: mean=4.48; stdev=3.87; max=99; n_reads=17954(35.9%)
+
+Final number of stacks built: 4030
+Final coverage: mean=4.48; stdev=3.87; max=99; n_reads=17954(35.9%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Bear_Paw_3'...done.
+ustacks is done.
+
+Sample 4 of 16 'Bear_Paw_4'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_4.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Bear_Paw_4.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3534 stacks representing 16733 primary reads (33.5%)
+  27997 secondary stacks representing 33267 secondary reads (66.5%)
+
+Stack coverage: mean=4.73; stdev=13.33; max=353; n_reads=16733(33.5%)
+Removing repetitive stacks: cov > 45 (mean+3*stdev)...
+  Blacklisted 116 stacks.
+Coverage after repeat removal: mean=3.91; stdev=2.36; max=45; n_reads=13379(26.8%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3418 stacks into 3361; blacklisted 6 stacks.
+Coverage after assembling stacks: mean=3.93; stdev=2.54; max=46; n_reads=13134(26.3%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1826 out of 33267 secondary reads (5.5%), 430 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.48; stdev=3.84; max=94; n_reads=14960(29.9%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3361 stacks into 3349 stacks.
+Coverage after gapped assembly: mean=4.49; stdev=3.99; max=94; n_reads=14960(29.9%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 168 out of 31441 secondary reads (0.5%).
+Coverage after merging gapped secondary stacks: mean=4.54; stdev=4.44; max=109; n_reads=15128(30.3%)
+
+Final number of stacks built: 3349
+Final coverage: mean=4.54; stdev=4.44; max=109; n_reads=15128(30.3%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Bear_Paw_4'...done.
+ustacks is done.
+
+Sample 5 of 16 'Bear_Paw_5'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_5.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Bear_Paw_5.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3293 stacks representing 15352 primary reads (30.7%)
+  29568 secondary stacks representing 34648 secondary reads (69.3%)
+
+Stack coverage: mean=4.66; stdev=12.74; max=343; n_reads=15352(30.7%)
+Removing repetitive stacks: cov > 43 (mean+3*stdev)...
+  Blacklisted 102 stacks.
+Coverage after repeat removal: mean=3.83; stdev=2.28; max=42; n_reads=12234(24.5%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3191 stacks into 3127; blacklisted 7 stacks.
+Coverage after assembling stacks: mean=3.84; stdev=2.40; max=40; n_reads=11929(23.9%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1909 out of 34648 secondary reads (5.5%), 470 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.46; stdev=3.93; max=87; n_reads=13838(27.7%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3127 stacks into 3118 stacks.
+Coverage after gapped assembly: mean=4.47; stdev=4.02; max=87; n_reads=13838(27.7%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 119 out of 32739 secondary reads (0.4%).
+Coverage after merging gapped secondary stacks: mean=4.51; stdev=4.23; max=97; n_reads=13957(27.9%)
+
+Final number of stacks built: 3118
+Final coverage: mean=4.51; stdev=4.23; max=97; n_reads=13957(27.9%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Bear_Paw_5'...done.
+ustacks is done.
+
+Sample 6 of 16 'Bear_Paw_6'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_6.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Bear_Paw_6.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  2824 stacks representing 12943 primary reads (25.9%)
+  32057 secondary stacks representing 37057 secondary reads (74.1%)
+
+Stack coverage: mean=4.58; stdev=14.35; max=493; n_reads=12943(25.9%)
+Removing repetitive stacks: cov > 48 (mean+3*stdev)...
+  Blacklisted 117 stacks.
+Coverage after repeat removal: mean=3.73; stdev=2.27; max=38; n_reads=10108(20.2%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 2707 stacks into 2647; blacklisted 7 stacks.
+Coverage after assembling stacks: mean=3.75; stdev=2.38; max=42; n_reads=9853(19.7%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1680 out of 37057 secondary reads (4.5%), 454 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.39; stdev=4.26; max=84; n_reads=11533(23.1%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 2647 stacks into 2633 stacks.
+Coverage after gapped assembly: mean=4.41; stdev=4.49; max=84; n_reads=11533(23.1%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 143 out of 35377 secondary reads (0.4%).
+Coverage after merging gapped secondary stacks: mean=4.47; stdev=5.02; max=110; n_reads=11676(23.4%)
+
+Final number of stacks built: 2633
+Final coverage: mean=4.47; stdev=5.02; max=110; n_reads=11676(23.4%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Bear_Paw_6'...done.
+ustacks is done.
+
+Sample 7 of 16 'Bear_Paw_7'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_7.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Bear_Paw_7.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3828 stacks representing 18047 primary reads (36.1%)
+  26702 secondary stacks representing 31953 secondary reads (63.9%)
+
+Stack coverage: mean=4.71; stdev=13.22; max=390; n_reads=18047(36.1%)
+Removing repetitive stacks: cov > 45 (mean+3*stdev)...
+  Blacklisted 131 stacks.
+Coverage after repeat removal: mean=3.86; stdev=2.29; max=41; n_reads=14273(28.5%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3697 stacks into 3621; blacklisted 6 stacks.
+Coverage after assembling stacks: mean=3.89; stdev=2.55; max=48; n_reads=14010(28.0%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 2021 out of 31953 secondary reads (6.3%), 537 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.45; stdev=3.72; max=70; n_reads=16031(32.1%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3621 stacks into 3606 stacks.
+Coverage after gapped assembly: mean=4.47; stdev=4.09; max=86; n_reads=16031(32.1%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 204 out of 29932 secondary reads (0.7%).
+Coverage after merging gapped secondary stacks: mean=4.53; stdev=4.49; max=88; n_reads=16235(32.5%)
+
+Final number of stacks built: 3606
+Final coverage: mean=4.53; stdev=4.49; max=88; n_reads=16235(32.5%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Bear_Paw_7'...done.
+ustacks is done.
+
+Sample 8 of 16 'Bear_Paw_8'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Bear_Paw_8.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Bear_Paw_8.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3247 stacks representing 14850 primary reads (29.7%)
+  29599 secondary stacks representing 35150 secondary reads (70.3%)
+
+Stack coverage: mean=4.57; stdev=13.92; max=483; n_reads=14850(29.7%)
+Removing repetitive stacks: cov > 47 (mean+3*stdev)...
+  Blacklisted 118 stacks.
+Coverage after repeat removal: mean=3.74; stdev=2.31; max=41; n_reads=11712(23.4%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3129 stacks into 3070; blacklisted 4 stacks.
+Coverage after assembling stacks: mean=3.78; stdev=2.44; max=47; n_reads=11532(23.1%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1527 out of 35150 secondary reads (4.3%), 414 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.28; stdev=3.65; max=63; n_reads=13059(26.1%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3070 stacks into 3056 stacks.
+Coverage after gapped assembly: mean=4.30; stdev=3.94; max=86; n_reads=13059(26.1%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 104 out of 33623 secondary reads (0.3%).
+Coverage after merging gapped secondary stacks: mean=4.33; stdev=4.24; max=101; n_reads=13163(26.3%)
+
+Final number of stacks built: 3056
+Final coverage: mean=4.33; stdev=4.24; max=101; n_reads=13163(26.3%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Bear_Paw_8'...done.
+ustacks is done.
+
+Sample 9 of 16 'Rabbit_Slough_1'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_1.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Rabbit_Slough_1.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3853 stacks representing 16732 primary reads (33.5%)
+  27325 secondary stacks representing 33268 secondary reads (66.5%)
+
+Stack coverage: mean=4.34; stdev=11.47; max=452; n_reads=16732(33.5%)
+Removing repetitive stacks: cov > 39 (mean+3*stdev)...
+  Blacklisted 107 stacks.
+Coverage after repeat removal: mean=3.75; stdev=1.93; max=34; n_reads=14046(28.1%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3746 stacks into 3687; blacklisted 4 stacks.
+Coverage after assembling stacks: mean=3.79; stdev=2.24; max=61; n_reads=13910(27.8%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1755 out of 33268 secondary reads (5.3%), 498 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.27; stdev=3.63; max=112; n_reads=15665(31.3%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3687 stacks into 3673 stacks.
+Coverage after gapped assembly: mean=4.28; stdev=3.75; max=112; n_reads=15665(31.3%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 135 out of 31513 secondary reads (0.4%).
+Coverage after merging gapped secondary stacks: mean=4.32; stdev=4.06; max=114; n_reads=15800(31.6%)
+
+Final number of stacks built: 3673
+Final coverage: mean=4.32; stdev=4.06; max=114; n_reads=15800(31.6%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Rabbit_Slough_1'...done.
+ustacks is done.
+
+Sample 10 of 16 'Rabbit_Slough_2'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_2.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Rabbit_Slough_2.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3165 stacks representing 14388 primary reads (28.8%)
+  29725 secondary stacks representing 35612 secondary reads (71.2%)
+
+Stack coverage: mean=4.55; stdev=13.18; max=425; n_reads=14388(28.8%)
+Removing repetitive stacks: cov > 45 (mean+3*stdev)...
+  Blacklisted 104 stacks.
+Coverage after repeat removal: mean=3.76; stdev=2.47; max=43; n_reads=11501(23.0%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3061 stacks into 2983; blacklisted 10 stacks.
+Coverage after assembling stacks: mean=3.75; stdev=2.52; max=51; n_reads=11111(22.2%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1587 out of 35612 secondary reads (4.5%), 476 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.29; stdev=3.99; max=68; n_reads=12698(25.4%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 2983 stacks into 2974 stacks.
+Coverage after gapped assembly: mean=4.30; stdev=4.16; max=68; n_reads=12698(25.4%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 130 out of 34025 secondary reads (0.4%).
+Coverage after merging gapped secondary stacks: mean=4.34; stdev=4.62; max=101; n_reads=12828(25.7%)
+
+Final number of stacks built: 2974
+Final coverage: mean=4.34; stdev=4.62; max=101; n_reads=12828(25.7%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Rabbit_Slough_2'...done.
+ustacks is done.
+
+Sample 11 of 16 'Rabbit_Slough_3'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_3.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Rabbit_Slough_3.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3505 stacks representing 16271 primary reads (32.5%)
+  27888 secondary stacks representing 33729 secondary reads (67.5%)
+
+Stack coverage: mean=4.64; stdev=13.22; max=458; n_reads=16271(32.5%)
+Removing repetitive stacks: cov > 45 (mean+3*stdev)...
+  Blacklisted 114 stacks.
+Coverage after repeat removal: mean=3.85; stdev=2.67; max=43; n_reads=13039(26.1%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3391 stacks into 3308; blacklisted 7 stacks.
+Coverage after assembling stacks: mean=3.85; stdev=2.72; max=45; n_reads=12651(25.3%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1714 out of 33729 secondary reads (5.1%), 511 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.37; stdev=3.97; max=78; n_reads=14365(28.7%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3308 stacks into 3293 stacks.
+Coverage after gapped assembly: mean=4.39; stdev=4.13; max=81; n_reads=14365(28.7%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 126 out of 32015 secondary reads (0.4%).
+Coverage after merging gapped secondary stacks: mean=4.43; stdev=4.39; max=91; n_reads=14491(29.0%)
+
+Final number of stacks built: 3293
+Final coverage: mean=4.43; stdev=4.39; max=91; n_reads=14491(29.0%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Rabbit_Slough_3'...done.
+ustacks is done.
+
+Sample 12 of 16 'Rabbit_Slough_4'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_4.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Rabbit_Slough_4.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3401 stacks representing 15827 primary reads (31.7%)
+  28790 secondary stacks representing 34173 secondary reads (68.3%)
+
+Stack coverage: mean=4.65; stdev=12.73; max=411; n_reads=15827(31.7%)
+Removing repetitive stacks: cov > 43 (mean+3*stdev)...
+  Blacklisted 96 stacks.
+Coverage after repeat removal: mean=3.86; stdev=2.58; max=42; n_reads=12742(25.5%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3305 stacks into 3226; blacklisted 12 stacks.
+Coverage after assembling stacks: mean=3.86; stdev=2.83; max=44; n_reads=12352(24.7%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1835 out of 34173 secondary reads (5.4%), 504 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.43; stdev=4.24; max=91; n_reads=14187(28.4%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3226 stacks into 3215 stacks.
+Coverage after gapped assembly: mean=4.45; stdev=4.50; max=116; n_reads=14187(28.4%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 162 out of 32338 secondary reads (0.5%).
+Coverage after merging gapped secondary stacks: mean=4.50; stdev=4.89; max=134; n_reads=14349(28.7%)
+
+Final number of stacks built: 3215
+Final coverage: mean=4.50; stdev=4.89; max=134; n_reads=14349(28.7%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Rabbit_Slough_4'...done.
+ustacks is done.
+
+Sample 13 of 16 'Rabbit_Slough_5'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_5.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Rabbit_Slough_5.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3332 stacks representing 14863 primary reads (29.7%)
+  29254 secondary stacks representing 35137 secondary reads (70.3%)
+
+Stack coverage: mean=4.46; stdev=11.10; max=312; n_reads=14863(29.7%)
+Removing repetitive stacks: cov > 38 (mean+3*stdev)...
+  Blacklisted 96 stacks.
+Coverage after repeat removal: mean=3.75; stdev=2.21; max=38; n_reads=12121(24.2%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3236 stacks into 3180; blacklisted 8 stacks.
+Coverage after assembling stacks: mean=3.75; stdev=2.27; max=38; n_reads=11833(23.7%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1578 out of 35137 secondary reads (4.5%), 430 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.25; stdev=3.66; max=101; n_reads=13411(26.8%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3180 stacks into 3163 stacks.
+Coverage after gapped assembly: mean=4.27; stdev=3.79; max=104; n_reads=13411(26.8%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 130 out of 33559 secondary reads (0.4%).
+Coverage after merging gapped secondary stacks: mean=4.31; stdev=4.03; max=113; n_reads=13541(27.1%)
+
+Final number of stacks built: 3163
+Final coverage: mean=4.31; stdev=4.03; max=113; n_reads=13541(27.1%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Rabbit_Slough_5'...done.
+ustacks is done.
+
+Sample 14 of 16 'Rabbit_Slough_6'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_6.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Rabbit_Slough_6.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  2975 stacks representing 13432 primary reads (26.9%)
+  30938 secondary stacks representing 36568 secondary reads (73.1%)
+
+Stack coverage: mean=4.51; stdev=12.42; max=416; n_reads=13432(26.9%)
+Removing repetitive stacks: cov > 42 (mean+3*stdev)...
+  Blacklisted 109 stacks.
+Coverage after repeat removal: mean=3.72; stdev=2.20; max=34; n_reads=10662(21.3%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 2866 stacks into 2814; blacklisted 5 stacks.
+Coverage after assembling stacks: mean=3.74; stdev=2.28; max=34; n_reads=10467(20.9%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1693 out of 36568 secondary reads (4.6%), 492 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.35; stdev=4.25; max=107; n_reads=12160(24.3%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 2814 stacks into 2803 stacks.
+Coverage after gapped assembly: mean=4.37; stdev=4.47; max=107; n_reads=12160(24.3%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 114 out of 34875 secondary reads (0.3%).
+Coverage after merging gapped secondary stacks: mean=4.41; stdev=4.81; max=116; n_reads=12274(24.5%)
+
+Final number of stacks built: 2803
+Final coverage: mean=4.41; stdev=4.81; max=116; n_reads=12274(24.5%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Rabbit_Slough_6'...done.
+ustacks is done.
+
+Sample 15 of 16 'Rabbit_Slough_7'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_7.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Rabbit_Slough_7.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3980 stacks representing 17877 primary reads (35.8%)
+  26322 secondary stacks representing 32123 secondary reads (64.2%)
+
+Stack coverage: mean=4.49; stdev=10.81; max=315; n_reads=17877(35.8%)
+Removing repetitive stacks: cov > 37 (mean+3*stdev)...
+  Blacklisted 105 stacks.
+Coverage after repeat removal: mean=3.85; stdev=2.16; max=35; n_reads=14918(29.8%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3875 stacks into 3795; blacklisted 9 stacks.
+Coverage after assembling stacks: mean=3.86; stdev=2.35; max=47; n_reads=14559(29.1%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1691 out of 32123 secondary reads (5.3%), 503 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.31; stdev=3.44; max=86; n_reads=16250(32.5%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 3795 stacks into 3780 stacks.
+Coverage after gapped assembly: mean=4.33; stdev=3.73; max=86; n_reads=16250(32.5%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 158 out of 30432 secondary reads (0.5%).
+Coverage after merging gapped secondary stacks: mean=4.37; stdev=3.93; max=88; n_reads=16408(32.8%)
+
+Final number of stacks built: 3780
+Final coverage: mean=4.37; stdev=3.93; max=88; n_reads=16408(32.8%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Rabbit_Slough_7'...done.
+ustacks is done.
+
+Sample 16 of 16 'Rabbit_Slough_8'
+----------
+ustacks --in-type fastq --file 2_demux/subsample/Rabbit_Slough_8.fq --out-path 4_stacks -m 3 -M 2 --threads 2
+ustacks parameters selected:
+  Input file: '2_demux/subsample/Rabbit_Slough_8.fq'
+  Min depth of coverage to create a stack (m): 3
+  Repeat removal algorithm: enabled
+  Max distance allowed between stacks (M): 2
+  Max distance allowed to align secondary reads: 4
+  Max number of stacks allowed per de novo locus: 3
+  Deleveraging algorithm: disabled
+  Gapped assembly: enabled
+  Minimum alignment length: 0.8
+  Model type: SNP
+  Alpha significance level for model: 0.05
+
+Loading RAD-Tags...
+
+Loaded 50000 reads; formed:
+  3154 stacks representing 14850 primary reads (29.7%)
+  29407 secondary stacks representing 35150 secondary reads (70.3%)
+
+Stack coverage: mean=4.71; stdev=14.16; max=431; n_reads=14850(29.7%)
+Removing repetitive stacks: cov > 48 (mean+3*stdev)...
+  Blacklisted 104 stacks.
+Coverage after repeat removal: mean=3.81; stdev=2.54; max=40; n_reads=11609(23.2%)
+
+Assembling stacks (max dist. M=2)...
+  Assembled 3050 stacks into 2996; blacklisted 3 stacks.
+Coverage after assembling stacks: mean=3.86; stdev=2.90; max=52; n_reads=11501(23.0%)
+
+Merging secondary stacks (max dist. N=4 from consensus)...
+  Merged 1598 out of 35150 secondary reads (4.5%), 406 merged with gapped alignments.
+Coverage after merging secondary stacks: mean=4.39; stdev=4.24; max=81; n_reads=13099(26.2%)
+
+Assembling stacks, allowing for gaps (min. match length 80.0%)...
+  Assembled 2996 stacks into 2983 stacks.
+Coverage after gapped assembly: mean=4.41; stdev=4.51; max=85; n_reads=13099(26.2%)
+
+Merging secondary stacks, allowing for gaps (min. match length 80.0%)...
+  Merged 151 out of 33552 secondary reads (0.5%).
+Coverage after merging gapped secondary stacks: mean=4.46; stdev=4.88; max=87; n_reads=13250(26.5%)
+
+Final number of stacks built: 2983
+Final coverage: mean=4.46; stdev=4.88; max=87; n_reads=13250(26.5%)
+Calling consensus sequences and haplotypes for catalog assembly...
+Writing tags, SNPs, and alleles files to '4_stacks/Rabbit_Slough_8'...done.
+ustacks is done.
+
+BEGIN cov_per_sample
+# Depths of Coverage for Processed Samples
+sample	loci assembled	depth of cov	max cov	number reads incorporated	% reads incorporated
+Bear_Paw_1	3484	4.59	122	15855	31.7
+Bear_Paw_2	3214	4.65	111	14835	29.7
+Bear_Paw_3	4030	4.48	99	17954	35.9
+Bear_Paw_4	3349	4.54	109	15128	30.3
+Bear_Paw_5	3118	4.51	97	13957	27.9
+Bear_Paw_6	2633	4.47	110	11676	23.4
+Bear_Paw_7	3606	4.53	88	16235	32.5
+Bear_Paw_8	3056	4.33	101	13163	26.3
+Rabbit_Slough_1	3673	4.32	114	15800	31.6
+Rabbit_Slough_2	2974	4.34	101	12828	25.7
+Rabbit_Slough_3	3293	4.43	91	14491	29.0
+Rabbit_Slough_4	3215	4.50	134	14349	28.7
+Rabbit_Slough_5	3163	4.31	113	13541	27.1
+Rabbit_Slough_6	2803	4.41	116	12274	24.5
+Rabbit_Slough_7	3780	4.37	88	16408	32.8
+Rabbit_Slough_8	2983	4.46	87	13250	26.5
+END cov_per_sample
+
+cstacks
+==========
+cstacks -n 1 --threads 2 -M popmap_completo.txt -P 4_stacks
+
+cstacks parameters selected:
+  Loci matched based on sequence identity.
+  Number of mismatches allowed between stacks: 1
+  Gapped alignments: enabled
+Constructing catalog from 16 samples.
+
+Initializing new catalog...
+  Parsing 4_stacks/Bear_Paw_1.tags.tsv
+  Parsing 4_stacks/Bear_Paw_1.snps.tsv
+  Parsing 4_stacks/Bear_Paw_1.alleles.tsv
+  3458 loci were newly added to the catalog.
+
+Processing sample 4_stacks/Bear_Paw_2 [2 of 16]
+  Parsing 4_stacks/Bear_Paw_2.tags.tsv
+  Parsing 4_stacks/Bear_Paw_2.snps.tsv
+  Parsing 4_stacks/Bear_Paw_2.alleles.tsv
+Searching for sequence matches...
+  3458 loci in the catalog, 62746 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  726 loci were matched to a catalog locus.
+  30 loci were matched to a catalog locus using gapped alignments.
+  2437 loci were newly added to the catalog.
+  1 loci matched more than one catalog locus, linking them.
+    2 linked catalog loci were merged into 1 loci.
+
+Processing sample 4_stacks/Bear_Paw_3 [3 of 16]
+  Parsing 4_stacks/Bear_Paw_3.tags.tsv
+  Parsing 4_stacks/Bear_Paw_3.snps.tsv
+  Parsing 4_stacks/Bear_Paw_3.alleles.tsv
+Searching for sequence matches...
+  5894 loci in the catalog, 107317 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  1235 loci were matched to a catalog locus.
+  44 loci were matched to a catalog locus using gapped alignments.
+  2727 loci were newly added to the catalog.
+  1 loci matched more than one catalog locus, linking them.
+    2 linked catalog loci were merged into 1 loci.
+
+Processing sample 4_stacks/Bear_Paw_4 [4 of 16]
+  Parsing 4_stacks/Bear_Paw_4.tags.tsv
+  Parsing 4_stacks/Bear_Paw_4.snps.tsv
+  Parsing 4_stacks/Bear_Paw_4.alleles.tsv
+Searching for sequence matches...
+  8620 loci in the catalog, 156920 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  1449 loci were matched to a catalog locus.
+  48 loci were matched to a catalog locus using gapped alignments.
+  1833 loci were newly added to the catalog.
+  1 loci matched more than one catalog locus, linking them.
+    2 linked catalog loci were merged into 1 loci.
+
+Processing sample 4_stacks/Bear_Paw_5 [5 of 16]
+  Parsing 4_stacks/Bear_Paw_5.tags.tsv
+  Parsing 4_stacks/Bear_Paw_5.snps.tsv
+  Parsing 4_stacks/Bear_Paw_5.alleles.tsv
+Searching for sequence matches...
+  10452 loci in the catalog, 190553 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  1622 loci were matched to a catalog locus.
+  43 loci were matched to a catalog locus using gapped alignments.
+  1433 loci were newly added to the catalog.
+  2 loci matched more than one catalog locus, linking them.
+    4 linked catalog loci were merged into 2 loci.
+
+Processing sample 4_stacks/Bear_Paw_6 [6 of 16]
+  Parsing 4_stacks/Bear_Paw_6.tags.tsv
+  Parsing 4_stacks/Bear_Paw_6.snps.tsv
+  Parsing 4_stacks/Bear_Paw_6.alleles.tsv
+Searching for sequence matches...
+  11883 loci in the catalog, 217038 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  1292 loci were matched to a catalog locus.
+  50 loci were matched to a catalog locus using gapped alignments.
+  1277 loci were newly added to the catalog.
+  4 loci matched more than one catalog locus, linking them.
+    8 linked catalog loci were merged into 4 loci.
+
+Processing sample 4_stacks/Bear_Paw_7 [7 of 16]
+  Parsing 4_stacks/Bear_Paw_7.tags.tsv
+  Parsing 4_stacks/Bear_Paw_7.snps.tsv
+  Parsing 4_stacks/Bear_Paw_7.alleles.tsv
+Searching for sequence matches...
+  13156 loci in the catalog, 240472 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  2269 loci were matched to a catalog locus.
+  64 loci were matched to a catalog locus using gapped alignments.
+  1254 loci were newly added to the catalog.
+  3 loci matched more than one catalog locus, linking them.
+    6 linked catalog loci were merged into 3 loci.
+
+Processing sample 4_stacks/Bear_Paw_8 [8 of 16]
+  Parsing 4_stacks/Bear_Paw_8.tags.tsv
+  Parsing 4_stacks/Bear_Paw_8.snps.tsv
+  Parsing 4_stacks/Bear_Paw_8.alleles.tsv
+Searching for sequence matches...
+  14407 loci in the catalog, 263652 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  1778 loci were matched to a catalog locus.
+  50 loci were matched to a catalog locus using gapped alignments.
+  1216 loci were newly added to the catalog.
+  4 loci matched more than one catalog locus, linking them.
+    8 linked catalog loci were merged into 4 loci.
+
+Processing sample 4_stacks/Rabbit_Slough_1 [9 of 16]
+  Parsing 4_stacks/Rabbit_Slough_1.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_1.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_1.alleles.tsv
+Searching for sequence matches...
+  15619 loci in the catalog, 285834 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  2201 loci were matched to a catalog locus.
+  65 loci were matched to a catalog locus using gapped alignments.
+  1394 loci were newly added to the catalog.
+  2 loci matched more than one catalog locus, linking them.
+    4 linked catalog loci were merged into 2 loci.
+
+Processing sample 4_stacks/Rabbit_Slough_2 [10 of 16]
+  Parsing 4_stacks/Rabbit_Slough_2.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_2.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_2.alleles.tsv
+Searching for sequence matches...
+  17011 loci in the catalog, 312026 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  1872 loci were matched to a catalog locus.
+  48 loci were matched to a catalog locus using gapped alignments.
+  1036 loci were newly added to the catalog.
+  3 loci matched more than one catalog locus, linking them.
+    6 linked catalog loci were merged into 3 loci.
+
+Processing sample 4_stacks/Rabbit_Slough_3 [11 of 16]
+  Parsing 4_stacks/Rabbit_Slough_3.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_3.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_3.alleles.tsv
+Searching for sequence matches...
+  18044 loci in the catalog, 331214 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  2173 loci were matched to a catalog locus.
+  71 loci were matched to a catalog locus using gapped alignments.
+  1033 loci were newly added to the catalog.
+  3 loci matched more than one catalog locus, linking them.
+    7 linked catalog loci were merged into 3 loci.
+
+Processing sample 4_stacks/Rabbit_Slough_4 [12 of 16]
+  Parsing 4_stacks/Rabbit_Slough_4.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_4.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_4.alleles.tsv
+Searching for sequence matches...
+  19073 loci in the catalog, 350613 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  2299 loci were matched to a catalog locus.
+  60 loci were matched to a catalog locus using gapped alignments.
+  833 loci were newly added to the catalog.
+  2 loci matched more than one catalog locus, linking them.
+    4 linked catalog loci were merged into 2 loci.
+
+Processing sample 4_stacks/Rabbit_Slough_5 [13 of 16]
+  Parsing 4_stacks/Rabbit_Slough_5.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_5.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_5.alleles.tsv
+Searching for sequence matches...
+  19904 loci in the catalog, 366370 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  2340 loci were matched to a catalog locus.
+  74 loci were matched to a catalog locus using gapped alignments.
+  732 loci were newly added to the catalog.
+  6 loci matched more than one catalog locus, linking them.
+    10 linked catalog loci were merged into 5 loci.
+
+Processing sample 4_stacks/Rabbit_Slough_6 [14 of 16]
+  Parsing 4_stacks/Rabbit_Slough_6.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_6.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_6.alleles.tsv
+Searching for sequence matches...
+  20631 loci in the catalog, 380413 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  2034 loci were matched to a catalog locus.
+  76 loci were matched to a catalog locus using gapped alignments.
+  680 loci were newly added to the catalog.
+  5 loci matched more than one catalog locus, linking them.
+    10 linked catalog loci were merged into 5 loci.
+
+Processing sample 4_stacks/Rabbit_Slough_7 [15 of 16]
+  Parsing 4_stacks/Rabbit_Slough_7.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_7.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_7.alleles.tsv
+Searching for sequence matches...
+  21306 loci in the catalog, 393306 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  3006 loci were matched to a catalog locus.
+  82 loci were matched to a catalog locus using gapped alignments.
+  671 loci were newly added to the catalog.
+  3 loci matched more than one catalog locus, linking them.
+    6 linked catalog loci were merged into 3 loci.
+
+Processing sample 4_stacks/Rabbit_Slough_8 [16 of 16]
+  Parsing 4_stacks/Rabbit_Slough_8.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_8.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_8.alleles.tsv
+Searching for sequence matches...
+  21974 loci in the catalog, 406308 kmers in the catalog hash.
+Searching for gapped alignments...
+Merging matches into catalog...
+  2295 loci were matched to a catalog locus.
+  84 loci were matched to a catalog locus using gapped alignments.
+  590 loci were newly added to the catalog.
+  1 loci matched more than one catalog locus, linking them.
+    2 linked catalog loci were merged into 1 loci.
+
+Writing catalog in directory '4_stacks/'.
+Final catalog contains 22563 loci.
+cstacks is done.
+
+sstacks
+==========
+sstacks -P 4_stacks --threads 2 -M popmap_completo.txt
+
+Searching for matches by sequence identity...
+  Parsing 4_stacks/catalog.tags.tsv
+  Parsing 4_stacks/catalog.snps.tsv
+  Parsing 4_stacks/catalog.alleles.tsv
+Populating kmer dictionary for exact matches...done.
+Populating kmer dictionary for gapped alignments...done.
+
+Processing sample '4_stacks/Bear_Paw_1' [1 of 16]
+  Parsing 4_stacks/Bear_Paw_1.tags.tsv
+  Parsing 4_stacks/Bear_Paw_1.snps.tsv
+  Parsing 4_stacks/Bear_Paw_1.alleles.tsv
+Searching for sequence matches...
+3458 sample loci compared against the catalog containing 22563 loci.
+  3391 matching loci, 1 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  1 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3456 total haplotypes examined from matching loci, 3455 verified.
+Searching for gapped alignments...
+Out of 3458 query loci, 68 gapped alignments attempted.
+  62 loci matched one catalog locus; 83 total haplotypes examined, 74 verified.
+  6 loci matched no catalog locus;
+    0 loci matched more than one catalog locus and were excluded.
+    2 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Bear_Paw_1.matches.tsv
+
+Processing sample '4_stacks/Bear_Paw_2' [2 of 16]
+  Parsing 4_stacks/Bear_Paw_2.tags.tsv
+  Parsing 4_stacks/Bear_Paw_2.snps.tsv
+  Parsing 4_stacks/Bear_Paw_2.alleles.tsv
+Searching for sequence matches...
+3192 sample loci compared against the catalog containing 22563 loci.
+  3123 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3173 total haplotypes examined from matching loci, 3173 verified.
+Searching for gapped alignments...
+Out of 3192 query loci, 69 gapped alignments attempted.
+  63 loci matched one catalog locus; 93 total haplotypes examined, 78 verified.
+  6 loci matched no catalog locus;
+    0 loci matched more than one catalog locus and were excluded.
+    0 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Bear_Paw_2.matches.tsv
+
+Processing sample '4_stacks/Bear_Paw_3' [3 of 16]
+  Parsing 4_stacks/Bear_Paw_3.tags.tsv
+  Parsing 4_stacks/Bear_Paw_3.snps.tsv
+  Parsing 4_stacks/Bear_Paw_3.alleles.tsv
+Searching for sequence matches...
+4005 sample loci compared against the catalog containing 22563 loci.
+  3922 matching loci, 2 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  2 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3997 total haplotypes examined from matching loci, 3995 verified.
+Searching for gapped alignments...
+Out of 4005 query loci, 85 gapped alignments attempted.
+  70 loci matched one catalog locus; 109 total haplotypes examined, 85 verified.
+  15 loci matched no catalog locus;
+    3 loci matched more than one catalog locus and were excluded.
+    2 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Bear_Paw_3.matches.tsv
+
+Processing sample '4_stacks/Bear_Paw_4' [4 of 16]
+  Parsing 4_stacks/Bear_Paw_4.tags.tsv
+  Parsing 4_stacks/Bear_Paw_4.snps.tsv
+  Parsing 4_stacks/Bear_Paw_4.alleles.tsv
+Searching for sequence matches...
+3329 sample loci compared against the catalog containing 22563 loci.
+  3246 matching loci, 2 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  2 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3316 total haplotypes examined from matching loci, 3314 verified.
+Searching for gapped alignments...
+Out of 3329 query loci, 85 gapped alignments attempted.
+  74 loci matched one catalog locus; 113 total haplotypes examined, 93 verified.
+  11 loci matched no catalog locus;
+    2 loci matched more than one catalog locus and were excluded.
+    3 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Bear_Paw_4.matches.tsv
+
+Processing sample '4_stacks/Bear_Paw_5' [5 of 16]
+  Parsing 4_stacks/Bear_Paw_5.tags.tsv
+  Parsing 4_stacks/Bear_Paw_5.snps.tsv
+  Parsing 4_stacks/Bear_Paw_5.alleles.tsv
+Searching for sequence matches...
+3096 sample loci compared against the catalog containing 22563 loci.
+  3020 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3094 total haplotypes examined from matching loci, 3094 verified.
+Searching for gapped alignments...
+Out of 3096 query loci, 76 gapped alignments attempted.
+  70 loci matched one catalog locus; 103 total haplotypes examined, 88 verified.
+  6 loci matched no catalog locus;
+    1 loci matched more than one catalog locus and were excluded.
+    0 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Bear_Paw_5.matches.tsv
+
+Processing sample '4_stacks/Bear_Paw_6' [6 of 16]
+  Parsing 4_stacks/Bear_Paw_6.tags.tsv
+  Parsing 4_stacks/Bear_Paw_6.snps.tsv
+  Parsing 4_stacks/Bear_Paw_6.alleles.tsv
+Searching for sequence matches...
+2615 sample loci compared against the catalog containing 22563 loci.
+  2546 matching loci, 1 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  1 loci contained SNPs unaccounted for in the catalog and were excluded.
+  2599 total haplotypes examined from matching loci, 2598 verified.
+Searching for gapped alignments...
+Out of 2615 query loci, 70 gapped alignments attempted.
+  63 loci matched one catalog locus; 104 total haplotypes examined, 90 verified.
+  7 loci matched no catalog locus;
+    0 loci matched more than one catalog locus and were excluded.
+    3 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Bear_Paw_6.matches.tsv
+
+Processing sample '4_stacks/Bear_Paw_7' [7 of 16]
+  Parsing 4_stacks/Bear_Paw_7.tags.tsv
+  Parsing 4_stacks/Bear_Paw_7.snps.tsv
+  Parsing 4_stacks/Bear_Paw_7.alleles.tsv
+Searching for sequence matches...
+3584 sample loci compared against the catalog containing 22563 loci.
+  3498 matching loci, 1 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  1 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3565 total haplotypes examined from matching loci, 3564 verified.
+Searching for gapped alignments...
+Out of 3584 query loci, 87 gapped alignments attempted.
+  74 loci matched one catalog locus; 109 total haplotypes examined, 89 verified.
+  13 loci matched no catalog locus;
+    3 loci matched more than one catalog locus and were excluded.
+    0 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Bear_Paw_7.matches.tsv
+
+Processing sample '4_stacks/Bear_Paw_8' [8 of 16]
+  Parsing 4_stacks/Bear_Paw_8.tags.tsv
+  Parsing 4_stacks/Bear_Paw_8.snps.tsv
+  Parsing 4_stacks/Bear_Paw_8.alleles.tsv
+Searching for sequence matches...
+3040 sample loci compared against the catalog containing 22563 loci.
+  2968 matching loci, 1 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  1 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3015 total haplotypes examined from matching loci, 3014 verified.
+Searching for gapped alignments...
+Out of 3040 query loci, 73 gapped alignments attempted.
+  65 loci matched one catalog locus; 103 total haplotypes examined, 86 verified.
+  8 loci matched no catalog locus;
+    1 loci matched more than one catalog locus and were excluded.
+    2 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Bear_Paw_8.matches.tsv
+
+Processing sample '4_stacks/Rabbit_Slough_1' [9 of 16]
+  Parsing 4_stacks/Rabbit_Slough_1.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_1.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_1.alleles.tsv
+Searching for sequence matches...
+3658 sample loci compared against the catalog containing 22563 loci.
+  3590 matching loci, 1 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  1 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3662 total haplotypes examined from matching loci, 3661 verified.
+Searching for gapped alignments...
+Out of 3658 query loci, 69 gapped alignments attempted.
+  61 loci matched one catalog locus; 85 total haplotypes examined, 72 verified.
+  8 loci matched no catalog locus;
+    2 loci matched more than one catalog locus and were excluded.
+    0 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Rabbit_Slough_1.matches.tsv
+
+Processing sample '4_stacks/Rabbit_Slough_2' [10 of 16]
+  Parsing 4_stacks/Rabbit_Slough_2.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_2.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_2.alleles.tsv
+Searching for sequence matches...
+2953 sample loci compared against the catalog containing 22563 loci.
+  2892 matching loci, 1 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  1 loci contained SNPs unaccounted for in the catalog and were excluded.
+  2944 total haplotypes examined from matching loci, 2942 verified.
+Searching for gapped alignments...
+Out of 2953 query loci, 62 gapped alignments attempted.
+  57 loci matched one catalog locus; 79 total haplotypes examined, 71 verified.
+  5 loci matched no catalog locus;
+    3 loci matched more than one catalog locus and were excluded.
+    0 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Rabbit_Slough_2.matches.tsv
+
+Processing sample '4_stacks/Rabbit_Slough_3' [11 of 16]
+  Parsing 4_stacks/Rabbit_Slough_3.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_3.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_3.alleles.tsv
+Searching for sequence matches...
+3273 sample loci compared against the catalog containing 22563 loci.
+  3196 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3255 total haplotypes examined from matching loci, 3255 verified.
+Searching for gapped alignments...
+Out of 3273 query loci, 77 gapped alignments attempted.
+  69 loci matched one catalog locus; 103 total haplotypes examined, 87 verified.
+  8 loci matched no catalog locus;
+    2 loci matched more than one catalog locus and were excluded.
+    1 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Rabbit_Slough_3.matches.tsv
+
+Processing sample '4_stacks/Rabbit_Slough_4' [12 of 16]
+  Parsing 4_stacks/Rabbit_Slough_4.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_4.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_4.alleles.tsv
+Searching for sequence matches...
+3190 sample loci compared against the catalog containing 22563 loci.
+  3127 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3189 total haplotypes examined from matching loci, 3189 verified.
+Searching for gapped alignments...
+Out of 3190 query loci, 63 gapped alignments attempted.
+  59 loci matched one catalog locus; 80 total haplotypes examined, 73 verified.
+  4 loci matched no catalog locus;
+    2 loci matched more than one catalog locus and were excluded.
+    0 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Rabbit_Slough_4.matches.tsv
+
+Processing sample '4_stacks/Rabbit_Slough_5' [13 of 16]
+  Parsing 4_stacks/Rabbit_Slough_5.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_5.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_5.alleles.tsv
+Searching for sequence matches...
+3140 sample loci compared against the catalog containing 22563 loci.
+  3076 matching loci, 1 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  1 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3156 total haplotypes examined from matching loci, 3154 verified.
+Searching for gapped alignments...
+Out of 3140 query loci, 65 gapped alignments attempted.
+  60 loci matched one catalog locus; 91 total haplotypes examined, 76 verified.
+  5 loci matched no catalog locus;
+    3 loci matched more than one catalog locus and were excluded.
+    1 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Rabbit_Slough_5.matches.tsv
+
+Processing sample '4_stacks/Rabbit_Slough_6' [14 of 16]
+  Parsing 4_stacks/Rabbit_Slough_6.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_6.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_6.alleles.tsv
+Searching for sequence matches...
+2785 sample loci compared against the catalog containing 22563 loci.
+  2716 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  2780 total haplotypes examined from matching loci, 2780 verified.
+Searching for gapped alignments...
+Out of 2785 query loci, 69 gapped alignments attempted.
+  66 loci matched one catalog locus; 84 total haplotypes examined, 78 verified.
+  3 loci matched no catalog locus;
+    1 loci matched more than one catalog locus and were excluded.
+    0 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Rabbit_Slough_6.matches.tsv
+
+Processing sample '4_stacks/Rabbit_Slough_7' [15 of 16]
+  Parsing 4_stacks/Rabbit_Slough_7.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_7.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_7.alleles.tsv
+Searching for sequence matches...
+3756 sample loci compared against the catalog containing 22563 loci.
+  3686 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  3752 total haplotypes examined from matching loci, 3752 verified.
+Searching for gapped alignments...
+Out of 3756 query loci, 70 gapped alignments attempted.
+  65 loci matched one catalog locus; 81 total haplotypes examined, 74 verified.
+  5 loci matched no catalog locus;
+    0 loci matched more than one catalog locus and were excluded.
+    0 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Rabbit_Slough_7.matches.tsv
+
+Processing sample '4_stacks/Rabbit_Slough_8' [16 of 16]
+  Parsing 4_stacks/Rabbit_Slough_8.tags.tsv
+  Parsing 4_stacks/Rabbit_Slough_8.snps.tsv
+  Parsing 4_stacks/Rabbit_Slough_8.alleles.tsv
+Searching for sequence matches...
+2968 sample loci compared against the catalog containing 22563 loci.
+  2893 matching loci, 0 contained no verified haplotypes.
+  0 loci matched more than one catalog locus and were excluded.
+  0 loci contained SNPs unaccounted for in the catalog and were excluded.
+  2953 total haplotypes examined from matching loci, 2953 verified.
+Searching for gapped alignments...
+Out of 2968 query loci, 75 gapped alignments attempted.
+  73 loci matched one catalog locus; 99 total haplotypes examined, 94 verified.
+  2 loci matched no catalog locus;
+    1 loci matched more than one catalog locus and were excluded.
+    1 loci contained SNPs unaccounted for in the catalog and were excluded.
+    0 loci had no verified haplotypes.
+    0 loci had inconsistent alignments to a catalog locus and were excluded.
+Outputing to file 4_stacks/Rabbit_Slough_8.matches.tsv
+
+sstacks is done.
+
+tsv2bam
+==========
+tsv2bam -P 4_stacks  --threads 2 -M popmap_completo.txt
+
+Logging to '4_stacks/tsv2bam.log'.
+Configuration for this run:
+  Stacks directory: '4_stacks/'
+  Population map: 'popmap_completo.txt'
+  Num. samples: 16
+  Multithreaded.
+
+Loading the catalog...
+Processing sample 'Bear_Paw_1'...
+Processing sample 'Bear_Paw_2'...
+Processing sample 'Bear_Paw_3'...
+Processing sample 'Bear_Paw_4'...
+Processing sample 'Bear_Paw_5'...
+Processing sample 'Bear_Paw_6'...
+Processing sample 'Bear_Paw_7'...
+Processing sample 'Bear_Paw_8'...
+Processing sample 'Rabbit_Slough_1'...
+Processing sample 'Rabbit_Slough_2'...
+Processing sample 'Rabbit_Slough_3'...
+Processing sample 'Rabbit_Slough_4'...
+Processing sample 'Rabbit_Slough_5'...
+Processing sample 'Rabbit_Slough_6'...
+Processing sample 'Rabbit_Slough_7'...
+Processing sample 'Rabbit_Slough_8'...
+
+Sample 'Bear_Paw_1': matched 3452 sample loci to 3448 catalog loci; wrote 15592 records.
+Sample 'Bear_Paw_2': matched 3186 sample loci to 3178 catalog loci; wrote 14532 records.
+Sample 'Bear_Paw_3': matched 3990 sample loci to 3976 catalog loci; wrote 17612 records.
+Sample 'Bear_Paw_4': matched 3318 sample loci to 3307 catalog loci; wrote 14847 records.
+Sample 'Bear_Paw_5': matched 3090 sample loci to 3076 catalog loci; wrote 13901 records.
+Sample 'Bear_Paw_6': matched 2608 sample loci to 2598 catalog loci; wrote 11482 records.
+Sample 'Bear_Paw_7': matched 3571 sample loci to 3559 catalog loci; wrote 16063 records.
+Sample 'Bear_Paw_8': matched 3032 sample loci to 3021 catalog loci; wrote 12965 records.
+Sample 'Rabbit_Slough_1': matched 3650 sample loci to 3638 catalog loci; wrote 15611 records.
+Sample 'Rabbit_Slough_2': matched 2948 sample loci to 2943 catalog loci; wrote 12714 records.
+Sample 'Rabbit_Slough_3': matched 3265 sample loci to 3257 catalog loci; wrote 14347 records.
+Sample 'Rabbit_Slough_4': matched 3186 sample loci to 3174 catalog loci; wrote 14278 records.
+Sample 'Rabbit_Slough_5': matched 3135 sample loci to 3127 catalog loci; wrote 13464 records.
+Sample 'Rabbit_Slough_6': matched 2782 sample loci to 2770 catalog loci; wrote 12164 records.
+Sample 'Rabbit_Slough_7': matched 3751 sample loci to 3738 catalog loci; wrote 16302 records.
+Sample 'Rabbit_Slough_8': matched 2965 sample loci to 2955 catalog loci; wrote 13154 records.
+
+tsv2bam is done.
+
+gstacks
+==========
+gstacks -P 4_stacks --threads 2 --kmer-length 15 -M popmap_completo.txt
+
+Logging to '4_stacks/gstacks.log'.
+Locus/sample distributions will be written to '4_stacks/gstacks.log.distribs'.
+
+Configuration for this run:
+  Input mode: denovo
+  Population map: 'popmap_completo.txt'
+  Input files: 16, e.g. '4_stacks/Bear_Paw_1.matches.bam'
+  Output to: '4_stacks/'
+  Model: marukilow (var_alpha: 0.01, gt_alpha: 0.05)
+  Kmer length: 15
+
+Reading BAM headers...
+Processing all loci...
+1%...
+2%...
+5%...
+10%...
+20%...
+50%...
+100%
+Input appears to be single-end (no paired-end reads were seen).
+
+Genotyped 22532 loci:
+  effective per-sample coverage: mean=5.9x, stdev=0.2x, min=5.6x, max=6.2x
+  mean number of sites per locus: 32.0
+  a consistent phasing was found for 271 of out 340 (79.7%) diploid loci needing phasing
+
+gstacks is done.
+
+populations
+==========
+populations -P 4_stacks --threads 2 -M popmap_completo.txt
+
+Logging to '4_stacks/populations.log'.
+Locus/sample distributions will be written to '4_stacks/populations.log.distribs'.
+populations parameters selected:
+  Percent samples limit per population: 0
+  Locus Population limit: 1
+  Percent samples overall: 0
+  Minor allele frequency cutoff: 0
+  Maximum observed heterozygosity cutoff: 1
+  Applying Fst correction: none.
+  Pi/Fis kernel smoothing: off
+  F-stats kernel smoothing: off
+  Bootstrap resampling: off
+
+Parsing population map...
+The population map contained 16 samples, 2 population(s), 1 group(s).
+Working on 16 samples.
+Working on 2 population(s):
+    Bear_Paw: Bear_Paw_1, Bear_Paw_2, Bear_Paw_3, Bear_Paw_4, Bear_Paw_5, Bear_Paw_6, Bear_Paw_7, Bear_Paw_8
+    Rabbit_Slough: Rabbit_Slough_1, Rabbit_Slough_2, Rabbit_Slough_3, Rabbit_Slough_4, Rabbit_Slough_5, Rabbit_Slough_6, Rabbit_Slough_7, Rabbit_Slough_8
+Working on 1 group(s) of populations:
+    defaultgrp: Bear_Paw, Rabbit_Slough
+
+Raw haplotypes will be written to '4_stacks/populations.haplotypes.tsv'
+Population-level summary statistics will be written to '4_stacks/populations.sumstats.tsv'
+Population-level haplotype summary statistics will be written to '4_stacks/populations.hapstats.tsv'
+
+Processing data in batches:
+  * load a batch of catalog loci and apply filters
+  * compute SNP- and haplotype-wise per-population statistics
+  * write the above statistics in the output files
+  * export the genotypes/haplotypes in specified format(s)
+More details in '4_stacks/populations.log.distribs'.
+
+Now processing...
+Batch 1 
+Batch 2 
+Batch 3 
+
+Removed 0 loci that did not pass sample/population constraints from 22532 loci.
+Kept 22532 loci, composed of 720893 sites; 0 of those sites were filtered, 1111 variant sites remained.
+Mean genotyped sites per locus: 31.99bp (stderr 0.00).
+
+Population summary statistics (more detail in populations.sumstats_summary.tsv):
+  Bear_Paw: 2.5347 samples per locus; pi: 0.2944; all/variant/polymorphic sites: 498551/1008/510; private alleles: 464
+  Rabbit_Slough: 2.3388 samples per locus; pi: 0.3344; all/variant/polymorphic sites: 512412/1042/578; private alleles: 498
+Populations is done.
+denovo_map.pl is done.
+
+denovo_map.pl completed at 2026-06-26 14:29:52

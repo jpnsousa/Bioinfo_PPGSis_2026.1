@@ -1,0 +1,16 @@
+CCCC	Bear_Paw_1
+CCAA	Bear_Paw_2
+CCTT	Bear_Paw_3
+CCGG	Bear_Paw_4
+CACA	Bear_Paw_5
+CAAC	Bear_Paw_6
+CATG	Bear_Paw_7
+CAGT	Bear_Paw_8
+CTCT	Rabbit_Slough_1
+CTAG	Rabbit_Slough_2
+CTTC	Rabbit_Slough_3
+CTGA	Rabbit_Slough_4
+GGGG	Rabbit_Slough_5
+GGAA	Rabbit_Slough_6
+GGTT	Rabbit_Slough_7
+GGCC	Rabbit_Slough_8
